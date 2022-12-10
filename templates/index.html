@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>哈利·波特人物关系问答系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">哈利·波特 人物关系问答系统</a>
+    </div>
+</nav>
+<main class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="bg-light p-5 rounded">
+                <h2>欢迎使用 哈利·波特人物关系问答系统</h2>
+                <p class="lead">请在下方输入有关哈利·波特人物关系的问题：</p>
+                <div class="mb-2">
+                    <form class="d-flex" role="search" name="q" action="/search" method="POST">
+                        <input class="form-control me-2" type="search" placeholder="请在此输入您的问题"
+                               aria-label="Search"
+                               name="question">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="mb-2">
+                    <label for="answerArea" class="form-label">搜索问题{{res.ques}}结果为:</label>
+                    <textarea class="form-control" id="answerArea" rows="16" disabled readonly>{{res.ans}}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="bg-light p-5 rounded">
+                <h2>问答帮助</h2>
+                <p class="lead">1.请使用人物全名进行提问</p>
+                <p class="lead">2.请使用正常疑问句格式提问，如:</p>
+                <ul class="list-group-item-text">
+                    <li>乔治·韦斯莱的叔叔是谁？</li>
+                    <li>哈利·波特的侄女是谁？</li>
+                    <li>乔治·韦斯莱从属于哪里？</li>
+                    <li>哈米什·麦克法兰的职业是？</li>
+                    <li>米勒娃·麦格与谁是师生关系?</li>
+                </ul>
+                <p class="lead">3. 本系统主要包含以下人物关系，若查询失败，可寻找其他关系词进行查询</p>
+                <span class="badge text-bg-primary">从属</span>
+                <span class="badge text-bg-primary">学生</span>
+                <span class="badge text-bg-primary">师生</span>
+                <span class="badge text-bg-primary">弟媳</span>
+                <span class="badge text-bg-primary">舅舅</span>
+                <span class="badge text-bg-primary">母亲</span>
+                <span class="badge text-bg-primary">嫂子</span>
+                <span class="badge text-bg-primary">弟弟</span>
+                <span class="badge text-bg-primary">女儿</span>
+                <span class="badge text-bg-primary">同门</span>
+                <span class="badge text-bg-primary">哥哥</span>
+                <span class="badge text-bg-primary">叔叔</span>
+                <span class="badge text-bg-primary">外祖母</span>
+                <span class="badge text-bg-primary">外祖父</span>
+                <span class="badge text-bg-primary">儿子</span>
+                <span class="badge text-bg-primary">妻子</span>
+                <span class="badge text-bg-primary">祖父</span>
+                <span class="badge text-bg-primary">祖母</span>
+                <span class="badge text-bg-primary">妹夫</span>
+                <span class="badge text-bg-primary">父亲</span>
+                <span class="badge text-bg-primary">孙女</span>
+                <span class="badge text-bg-primary">职业</span>
+                <span class="badge text-bg-primary">儿媳</span>
+                <span class="badge text-bg-primary">女婿</span>
+                <span class="badge text-bg-primary">孙子</span>
+                <span class="badge text-bg-primary">岳父</span>
+                <span class="badge text-bg-primary">岳母</span>
+                <span class="badge text-bg-primary">外孙</span>
+                <span class="badge text-bg-primary">外孙女</span>
+                <span class="badge text-bg-primary">姨妈</span>
+                <span class="badge text-bg-primary">阿姨</span>
+                <span class="badge text-bg-primary">父系祖先</span>
+                <span class="badge text-bg-primary">侄女</span>
+                <span class="badge text-bg-primary">内兄</span>
+                <span class="badge text-bg-primary">姨夫</span>
+                <span class="badge text-bg-primary">侄子</span>
+                <span class="badge text-bg-primary">表嫂</span>
+                <span class="badge text-bg-primary">远房亲戚</span>
+                <span class="badge text-bg-primary">表哥</span>
+                <span class="badge text-bg-primary">表侄</span>
+                <span class="badge text-bg-primary">外甥</span>
+                <span class="badge text-bg-primary">外甥女</span>
+                <span class="badge text-bg-primary">丈夫</span>
+                <span class="badge text-bg-primary">公公</span>
+                <span class="badge text-bg-primary">祖先</span>
+                <span class="badge text-bg-primary">后裔</span>
+                <span class="badge text-bg-primary">远亲</span>
+                <span class="badge text-bg-primary">表弟</span>
+                <span class="badge text-bg-primary">姐姐</span>
+                <span class="badge text-bg-primary">姑妈</span>
+                <span class="badge text-bg-primary">养子</span>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
